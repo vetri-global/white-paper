@@ -18,13 +18,17 @@ The key management functions will be the following:
 ```
 
 The functions to act with identity are two:
+```javascript
 	execute
  	approve
+```
 The first to trigger functions on other contracts or itself, the second to approve an execution or a claim addition.
 
 Lastly 2 functions to manage the claims;
+```javascript
 	addClaim
 	removeClaim
+```
 Added claims must me approved and the issuer of a claim can always revoke it. 
 
 
