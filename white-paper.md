@@ -101,15 +101,38 @@ the data if wanted by the identity owner.
 
 ## Use Cases 
 
-Let's say Alice wants her birthday to be verified by the local authority in her town, she would go to the authority office, scan a QR code to start the process. The authority sends a random string to Alice that she needs to send back with the identity address, all signed with one of her private keys. Now the authority is certain that the identity is owned by Alice. She can now send the data for her claim (her birthdate). The authority will match the date with the one on Alice's passport and verify the trueness of the statement. If everything is correct the authority will issue a claim and publish it in the blockchain. The claim will contain the signed (by authority) hash of the data, so that the data is stored uniquely on Alice's device but the integrity of the data can be verified. The last step needed in order to finalize the process is Alice approval to publish the claim on her identity.
+Let's say Alice wants her birthday to be verified by the local authority in her
+town, she would go to the authority office and scan a QR code to start the
+process. The authority sends a random string to Alice that she needs to send
+back with her identity address, all signed with one of her private keys. Now
+the authority is certain that the identity is owned by Alice. She can now send
+the data for her claim (her birthdate). The authority will match the date with
+the one on Alice's passport and verify the trueness of the statement. If
+everything is correct the authority will issue a claim and publish it in the
+blockchain. The claim will contain the signed (by authority) hash of the data,
+such that the data is stored uniquely on Alice's device but the integrity of
+the data can be verified. The last step needed in order to finalize the process
+is Alice approval to publish the claim on her identity.
 
 ![Use case 1](img/usecase1.png)
 
-Let's say that now Alice whats to enter a casino and prove her age at the entrance. She would initiate the process by scanning a QR code. The same random string challenge will be repeated to validate the ownership of the identity. Alice also sends her birthday. After that the casino system will check the existence of the claim and its validity by comparing the hash of the birthday data claimed by alice and the one stored on the blockchain signed by the authority. The casino must know what identity are reputable issuer of claims. If the claim is verified she can now enter the casino.
+Let's say that now Alice whats to enter a casino and prove her age at the
+entrance. She would initiate the process by scanning a QR code. The same random
+string challenge will be repeated to validate the ownership of the identity.
+Alice also sends her birthday. After that the casino system will check the
+existence of the claim and its validity by comparing the hash of the birthday
+data claimed by alice and the one stored on the blockchain signed by the
+authority. The casino must know what identity are reputable issuer of claims.
+If the claim is verified she can now enter the casino.
 
 ![Use case 2](img/usecase2.png)
 
-Of course this would not be a safe implementation of the protocol as Alice could borrow the identity from a friend of hers, but this impersonation can be avoided by including biometric claims about Alice. For example a photo of Alice could be saved and verified by an authority. The casino could request access to the data underlying the biometric claim and check the facial match with a face recognition algorithm and grant the access or not.
+Of course this would not be a safe implementation of the protocol, as Alice
+could borrow the identity from a friend of hers. This impersonation can be
+avoided by including biometric claims about Alice. For example a photo of Alice
+could be saved and verified by an authority. The casino could request access to
+the data underlying the biometric claim and check the facial match with a face
+recognition algorithm and grant the access or not.
 
 
 ## Implementation
