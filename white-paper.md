@@ -65,7 +65,7 @@ Lastly 2 functions to manage the claims;
 
 Added claims must me approved and the issuer of a claim can always revoke it.
 
-### ERC735: Claim
+### ERC735: Claim Holder
 
 The [ERC735](https://github.com/ethereum/EIPs/issues/735) standard proposal
 describes a standard format, as well as a management interface for adding,
