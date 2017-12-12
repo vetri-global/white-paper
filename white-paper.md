@@ -1,11 +1,14 @@
-## Abstract 
+# Self-sovereign Digital Identity
+
+## Abstract
 
 The purpose of VALID is to provide a public utility for self-sovereign identity
 with additional features for personal data management. In this paper we are
 going to describe our proposed approach to create a self-sovereign digital
 identity solution on the Ethereum blockchain based on the ERC725 standard.
 
-## Identity on the blockchain 
+
+## Identity on the Blockchain
 
 There are many problems that can be solved by blockchain in the context of
 digital identity, the biggest of all is the fragmentation and the ownership of
@@ -20,7 +23,7 @@ Fabian Vogelsteller would utilize this concept and defines an interoperable
 interface for it. Like in the case of ERC20, which enabled the interoperability
 of tokens projects, this standard should foster the identity ecosystem.
 
-## ERC725: Identity
+### ERC725: Identity
 
 [ERC725](https://github.com/ethereum/EIPs/issues/725) describes an interface
 for an unique identity for humans, groups, objects and machines.
@@ -28,10 +31,8 @@ for an unique identity for humans, groups, objects and machines.
 An identity has a collection of keys associated to it, which are used to
 authenticate interactions with third parties or to authorize changes to the
 identity itself. The identity can also hold a set of claims, which are further
-described in ERC735.
-
-In this context key refers to a public key of an Ethereum account (externally
-owned account) or a contract address.
+described in ERC735. In this context key refers to a public key of an Ethereum
+account (externally owned account) or a contract address.
 
 The proposal is still in a very early stage, so the details concerning the
 interface are likely to change.
@@ -64,11 +65,12 @@ Lastly 2 functions to manage the claims;
 
 Added claims must me approved and the issuer of a claim can always revoke it.
 
-## ERC735: Claim
+### ERC735: Claim
 
 The [ERC735](https://github.com/ethereum/EIPs/issues/735) standard proposal
 describes a standard format, as well as a management interface for adding,
-removing and holding claims.
+removing and holding claims. Claims are stored on the blockchain as part of the
+identity contract.
 
 The claim structure is the following:
 
@@ -92,14 +94,18 @@ With the following functions:
   removeClaim
 ```
 
-## Claim Privacy
+#### Claim Privacy
 
-To protect the identity privacy instead of saving the plain data in the claim
-we envision saving the hash of the data signed by the claim issuer, this would
-maintain the data private but enable the process of checking the integrity of
-the data if wanted by the identity owner.
+To protect the privacy of the identity the underlying data of a claim (e.g. the
+name of a person, its birthdate, etc.) is not directly stored in the claim.
+Instead it only stores a hash of the data, which is then signed by the claim
+issuer (together with the other claim metadata). This signature is then also
+stored in the claim. This protects the underlying data, but enables anyone to
+check the integrity of the private data (if made available by the identity
+owner).
 
-## Use Cases 
+
+## Use Cases
 
 Let's say Alice wants her birthday to be verified by the local authority in her
 town, she would go to the authority office and scan a QR code to start the
@@ -138,13 +144,13 @@ recognition algorithm and grant the access or not.
 ## Implementation
 
 
-## VALID Personal Data Use Case 
+## VALID Personal Data Use Case
 
 
 ## Escrow Contract VALID
 
 
-## Privacy 
+## Privacy
 
 considerations
 zkSNARKs
